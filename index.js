@@ -40,7 +40,14 @@ client.on('messageReactionAdd', async (reaction, user) =>{
     if(reaction.partial) await reaction.fetch()
     if(user.bot) return
     if(reaction.emoji.name === "🎌") await reaction.message.guild.members.cache.get(user.id).roles.add('806232380872327268')     
-    if(reaction.emoji.name === "🎌") await reaction.message.guild.members.cache.get(user.id).roles.remove('806232438421717033')     
+         
+})
+client.on('messageReactionRemove', async (reaction, user) =>{
+    if(reaction.message.partial) await reaction.message.fetch()
+    if(reaction.partial) await reaction.fetch()
+    if(user.bot) return
+    if(reaction.emoji.name === "🎌") await reaction.message.guild.members.cache.get(user.id).roles.remove('806232438421717033')       
+    
 })
 
 const embed2 = new Discord.MessageEmbed()
@@ -66,8 +73,14 @@ client.on('messageReactionAdd', async (reaction, user) =>{
     if(user.bot) return
     if(reaction.emoji.name === "💜") await reaction.message.guild.members.cache.get(user.id).roles.add('806231915287281754') 
     if(reaction.emoji.name === "♥️") await reaction.message.guild.members.cache.get(user.id).roles.add('806231988667285535')    
-    if(reaction.emoji.name === "💜") await reaction.message.guild.members.cache.get(user.id).roles.remove('806232380872327268') 
-    if(reaction.emoji.name === "♥️") await reaction.message.guild.members.cache.get(user.id).roles.remove('806232380872327268')     
+        
 })
-
+client.on('messageReactionRemove', async (reaction, user) =>{
+    if(reaction.message.partial) await reaction.message.fetch()
+    if(reaction.partial) await reaction.fetch()
+    if(user.bot) return    
+    if(reaction.emoji.name === "💜") await reaction.message.guild.members.cache.get(user.id).roles.remove('806232380872327268') 
+    if(reaction.emoji.name === "♥️") await reaction.message.guild.members.cache.get(user.id).roles.remove('806232380872327268')         
+    
+})
 client.login(process.env.TOKEN)
