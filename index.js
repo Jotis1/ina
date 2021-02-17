@@ -63,7 +63,7 @@ client.on('messageReactionRemove', async (reaction, user) =>{
 })
 client.on('message', async message => {
     if (message.content.startsWith(`${prefix}yt`)){
-        const msg = await (await message.channel.send(embed))
+        const msg = await (await message.channel.send(embed2))
         msg.react('💜')
         msg.react('♥️')
         message.delete()
