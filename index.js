@@ -3,17 +3,13 @@ const client = new Discord.Client()
 
 const prefix = "i!"
 
-client.on("ready", () => {
-
-    console.log("Blurp") 
-    client.user.setPresence({
-        status: "online",
-        activity: {
-            name: "HOLOLIVE",
-            type: "WATCHING"
-
-        }
-    })  
+client.on("ready", async() => {
+    console.log("a")
+    await client.user.setActivity("Hololive", {
+      url: "https://www.twitch.tv/jotis_1",
+      type: "STREAMING",//can be LISTENING, WATCHING, PLAYING, STREAMING
+    });
+  
 })
 
 
