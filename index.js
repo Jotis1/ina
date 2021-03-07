@@ -32,7 +32,7 @@ client.on('message', async message => {
     if (message.content.startsWith(`${prefix}vr`)){
         const msg = await (await message.channel.send(embed))
         msg.react('🎌')
-        message.delete()
+        
 
     }
 })
@@ -62,7 +62,7 @@ client.on('message', async message => {
         const msg = await (await message.channel.send(embed2))
         msg.react('💜')
         msg.react('♥️')
-        message.delete()
+        
 
     }
 })
